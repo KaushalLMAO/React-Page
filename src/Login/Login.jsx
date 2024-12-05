@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "../Home/Home";
+import "./Login.css";
 import { useState } from "react";
 const Login = () => {
   const [logindet, setlogindet] = useState(false);
@@ -13,14 +14,15 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div id="formdiv">
       {!logindet && (
-        <form onSubmit={login}>
+        <form onSubmit={login} id="form">
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />{" "}
+          <input type="email" id="email" name="email" required /> <br /> <br />{" "}
+          <br />
           <label htmlFor="name">Name:</label>
-          <input type="text" name="name" required />
-          <button type="submit">Submit</button>
+          <input type="text" name="name" required /> <br /> <br /> <br />
+          <button type="submit">Submit</button> <br /> <br />
         </form>
       )}
       {logindet ? <Home datareq={logindata} /> : "LogIn to Enter"}
